@@ -6,7 +6,6 @@ import axios from 'axios';
 const reactAppURL = process.env.REACT_APP_API_URL;
 
 export default function HandleData(props) {
-  console.log(reactAppURL);
   const path = useLocation().pathname;
   // Dashboard state
   const [dashLoading, setDashLoading] = useState(true);
@@ -37,9 +36,9 @@ export default function HandleData(props) {
     setDashLoading(true);
 
     // Urls
-    const coinsUrl = `${process.env.REACT_APP_API_URL}/coins`;
-    const trendingUrl = `${process.env.REACT_APP_API_URL}/trending`;
-    const newsURL = `${process.env.REACT_APP_API_URL}/news`;
+    const coinsUrl = `${reactAppURL}/coins`;
+    const trendingUrl = `${reactAppURL}/trending`;
+    const newsURL = `${reactAppURL}/news`;
 
     // Get requests
     const coins = axios.get(coinsUrl);
@@ -95,7 +94,7 @@ export default function HandleData(props) {
 
     //If fav is not in array, request fav data
     if (requestFav(favs, coin)) {
-      const requestUrl = `${process.env.REACT_APP_API_URL}/fav?id=${coin}`;
+      const requestUrl = `${reactAppURL}/fav?id=${coin}`;
 
       axios({ url: requestUrl })
         .then((response) => {

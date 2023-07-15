@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import Loader from "react-loader-spinner";
-import { Container } from "react-bootstrap";
+import Loader from 'react-loader-spinner';
+import { Container } from 'react-bootstrap';
 
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 function LoadingState() {
   return (

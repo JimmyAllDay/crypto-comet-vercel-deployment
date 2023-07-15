@@ -1,7 +1,8 @@
-import React from "react";
-import { Container, Col } from "react-bootstrap";
+import React from 'react';
+import { Container, Col } from 'react-bootstrap';
 
-import ReactTooltip from "react-tooltip";
+// import { Tooltip as ReactTooltip } from 'react-tooltip';
+// import 'react-tooltip/dist/react-tooltip.css';
 
 function TrendingContainer(props) {
   const trendingCoins = props.trends.map((coin, i) => {
@@ -9,7 +10,7 @@ function TrendingContainer(props) {
       const array = Array.from(String(int), Number);
       array.splice(4);
       const firstChar = array.shift();
-      return `${firstChar}.${array.slice(1).join("")}...`;
+      return `${firstChar}.${array.slice(1).join('')}...`;
     };
 
     return (
@@ -23,7 +24,7 @@ function TrendingContainer(props) {
           <img
             src={coin.item.small}
             alt={`${coin.item.symbol} icon`}
-            style={{ height: "30px" }}
+            style={{ height: '30px' }}
           />
         </Col>
         <Col className="my-auto ms-3 me-2">{coin.item.name}</Col>
@@ -41,14 +42,14 @@ function TrendingContainer(props) {
             data-for={`trending-${i}`}
           >{`$${reduceInt(coin.item.price_btc)}`}</p>
         </Col>
-        <ReactTooltip
+        {/* <ReactTooltip
           id={`trending-${i}`}
           place="left"
           type="dark"
           effect="solid"
         >
           {`$ ${coin.item.price_btc}`}
-        </ReactTooltip>
+        </ReactTooltip> */}
       </Container>
     );
   });
